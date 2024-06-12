@@ -6,4 +6,4 @@ Socials:
 * Linkedin: https://www.linkedin.com/in/fernandez-ajibade-a94533216
 * Github: https://github.com/Fernandez99fc
 
-Proficiencies: Linux, Networking, Ethical hacking & Cybersecurity
+Proficiencies: Linux, Networking, Troubleshooting, Ethical hacking & Cybersecurity
