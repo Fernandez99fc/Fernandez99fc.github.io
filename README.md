@@ -1,5 +1,5 @@
 # Introduction
-Welcome to my portfolio! Here, I will be uploading my cybersecurity & Hacking projects, and topics I feel like talking about.
+Welcome to my portfolio! Here, I will be uploading my cybersecurity & Penetration testing projects, as well as other contents that interests me.
 
 Socials:
 
