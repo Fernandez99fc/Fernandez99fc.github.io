@@ -31,7 +31,7 @@ Found an exploit "lotus cms 3.0 eval remote code execute". Using show options co
 This exploit will execute a remote code in the lotuscms and create a bind shell from the cms.
 ![VirtualBox_LINUX SERVER_23_04_2024_21_12_58](https://github.com/Fernandez99fc/cybersec/assets/172477285/8a967676-870b-40ca-9d2f-2a2fc56e4a8b)
 
-
+After gaining a shell, I ran "python -c import pty; pty.spawn("bash")" to expand the interactive shell.
 
  
  
