@@ -47,5 +47,6 @@ After login, we now have access to myphpadmin and we can maintain access to view
 
 ![VirtualBox_LINUX SERVER_23_04_2024_22_06_35](https://github.com/Fernandez99fc/cybersec/assets/172477285/e2fc3928-6e47-4451-a5ab-027a4e38643d)
 By searching the database, we can see some dev/user account credentials by navigating to gallery>dev_accounts>browser and we could see some user credentials for loneferret and dreg. 
+![VirtualBox_LINUX SERVER_23_04_2024_22_09_24](https://github.com/Fernandez99fc/cybersec/assets/172477285/657e290e-41a0-4eb9-aa8b-20d3836bb6e6)
 
 The name loneferret sounds familiar? When we read the blog page, we saw a welcome message of a new lead programmer. We could have administrative access if you can get hold of his account. I'm trying that first!
