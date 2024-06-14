@@ -70,6 +70,7 @@ We have a ssh service running on the target, we will try to login with the usern
 ![VirtualBox_LINUX SERVER_23_04_2024_22_48_07](https://github.com/Fernandez99fc/cybersec/assets/172477285/d85751fd-51a2-47ed-8a0c-865357bc1b16)
 
 -o To specify options
+
 HostKeyAlgorithm- To specify key algorithm accepted by the server.
 
 
