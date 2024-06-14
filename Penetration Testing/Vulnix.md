@@ -33,7 +33,7 @@ This exploit will execute a remote code in the lotuscms and create a bind shell 
 
 After gaining a shell, I ran "python -c import pty; pty.spawn("bash")" to expand the interactive shell.
 ![VirtualBox_LINUX SERVER_23_04_2024_21_46_45](https://github.com/Fernandez99fc/cybersec/assets/172477285/3a557098-efb0-4241-ab07-c29865f08b7e)
-After searching through the system, I found some user accounts in the /home directory. Then searching through each of them, I was able to find a gconfig.php file in the www kioptrix.com/gallery home directory. Gconfig is a file used for storing data in mysql database.
+After searching through the system, I found some user accounts in the /home directory. Then searching through each of them, I was able to find a gconfig.php file in the www kioptrix.com/gallery home directory. Gconfig is a file used for storing data such as usernames and passwords in mysql database.
 
 We could see some credentials of the root user being exposed. We will try to login with that.
 
