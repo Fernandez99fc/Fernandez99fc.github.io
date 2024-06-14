@@ -44,3 +44,8 @@ By using gobuster to perform a directory bursting, we could find phpmyadmin webp
    We would use the credentials found in the gconfig.php file to login to the phpmyadmin webpage, since phpmyadmin is a graphical user interface(GUI) software used to manage mysql database.
 ![VirtualBox_LINUX SERVER_23_04_2024_22_00_41](https://github.com/Fernandez99fc/cybersec/assets/172477285/beebfea4-f860-4c4e-b054-22a6b0f6713f)
 After login, we now have access to myphpadmin and we can maintain access to view user credentials and other interesting stuffs.
+
+![VirtualBox_LINUX SERVER_23_04_2024_22_06_35](https://github.com/Fernandez99fc/cybersec/assets/172477285/e2fc3928-6e47-4451-a5ab-027a4e38643d)
+By searching the database, we can see some dev/user account credentials by navigating to gallery>dev_accounts>browser and we could see some user credentials for loneferret and dreg. 
+
+The name loneferret sounds familiar? When we read the blog page, we saw a welcome message to a new lead programmer.
