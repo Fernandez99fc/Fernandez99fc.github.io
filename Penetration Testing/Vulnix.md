@@ -50,3 +50,28 @@ By searching the database, we can see some dev/user account credentials by navig
 ![VirtualBox_LINUX SERVER_23_04_2024_22_09_24](https://github.com/Fernandez99fc/cybersec/assets/172477285/657e290e-41a0-4eb9-aa8b-20d3836bb6e6)
 
 The name loneferret sounds familiar? When we read the blog page, we saw a welcome message of a new lead programmer. We could have administrative access if you can get hold of his account. I'm trying that first!
+
+We have the hash of the users, now we need to know the plaintext of the hash to get the password. I'll be using "hash-identifier" to identify the type of hash first. 
+Type hash-identifier and paste the hash.
+![VirtualBox_LINUX SERVER_23_04_2024_22_35_41](https://github.com/Fernandez99fc/cybersec/assets/172477285/ee4872de-43c1-4f6a-ae60-a06c6f14436d)
+Possible hashes are MD5 and domain-cached credentials... Since we know it's most likely to be a Md5 hash, we will try to decode the hash and I'll be using johnTheRipper.
+
+# Note: 
+Hashes can't be reversed from ciphertext, because a hash is a one-way function/algorithm, The only way a hash can be reversed is if it matches a known hash, therefore, they have the same password.  Using johnTheRipper, we can specify a wordlist, but by default john has a wordlist. John compares the hash of the passwords in that wordlists to the hash we want to crack, if the hash matches the hash, then we get the password. 
+
+Create a file and store the hash in it, created a file called passwords. Then use john to crack with the command "john --format=raw-md5 <file name>"
+--format - Specifies the hash format
+![VirtualBox_LINUX SERVER_23_04_2024_22_37_15](https://github.com/Fernandez99fc/cybersec/assets/172477285/b58a3713-d8bb-401d-92ed-2eb2d128b960)
+
+We found a possible hash and reveals the password is "starwars"
+![VirtualBox_LINUX SERVER_23_04_2024_22_37_15](https://github.com/Fernandez99fc/cybersec/assets/172477285/0aaabbbd-3136-46dc-b258-9c14f733499e)
+
+We have a ssh service running on the target, we will try to login with the username and the password recovered(Username=loneferret, password=starwars).
+![VirtualBox_LINUX SERVER_23_04_2024_22_48_07](https://github.com/Fernandez99fc/cybersec/assets/172477285/d85751fd-51a2-47ed-8a0c-865357bc1b16)
+
+-o To specify options
+HostKeyAlgorithm- To specify key algorithm accepted by the server.
+
+
+
+
