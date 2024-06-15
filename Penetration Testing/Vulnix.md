@@ -73,6 +73,28 @@ We have a ssh service running on the target, we will try to login with the usern
 
 HostKeyAlgorithm- To specify key algorithm accepted by the server.
 
+We are successfully logged in, using "ls" command to list files and directories in the user's home directory, we found a file named "CompanyPolicy.readme". Using "cat" to read the file,we could see the content of the file, telling the employee that it's company policy to use their newly installed software for creating,editing and viewing files, and he shoudl use the "sudo ht" command.
+![VirtualBox_LINUX SERVER_23_04_2024_22_48_07](https://github.com/Fernandez99fc/cybersec/assets/172477285/15137e15-1133-457d-8999-641610000bbf)
+We will run the command "sudo ht". But we ran into an error "error openinng terminal: xterm-256 color". We can check if we have the permission to run the command as sudo(root) by typing "sudo -l". But we do. 
+![VirtualBox_LINUX SERVER_23_04_2024_22_50_28](https://github.com/Fernandez99fc/cybersec/assets/172477285/3fb8134b-cb00-4074-ab5b-a70d14b0ef75)
+We can resolve this by typing "export TERM=xterm". Then retry the command again.
+![VirtualBox_LINUX SERVER_23_04_2024_22_56_33](https://github.com/Fernandez99fc/cybersec/assets/172477285/ffb9b015-9fcc-452a-a7d2-f043e660b4a7)
+![VirtualBox_LINUX SERVER_23_04_2024_22_56_01](https://github.com/Fernandez99fc/cybersec/assets/172477285/fe439651-7c7d-48b5-a073-254c41736804)
+
+It's working now. The goal is to escalate privileges to the root account. Since we have sudo right to use the editing software which we can use to modify any file. There various ways we can grant ourselves sudo rights, but we can choose to modify the /etc/sudoers file. /etc/sudoers file can be used to grant privileges as the super user(root) to run any command to perform any action on the system.
+By pressing CTRL+F we can see the menu and open the /etc/sudoers file. 
+![VirtualBox_LINUX SERVER_23_04_2024_22_59_08](https://github.com/Fernandez99fc/cybersec/assets/172477285/0431e99b-1a80-46f5-8830-cce134a6ce11)
+![VirtualBox_LINUX SERVER_23_04_2024_23_00_12](https://github.com/Fernandez99fc/cybersec/assets/172477285/b7bc5a1b-abac-44bb-a8e6-20d64412cfdf)
+![VirtualBox_LINUX SERVER_23_04_2024_23_00_34](https://github.com/Fernandez99fc/cybersec/assets/172477285/73908515-e06d-493e-bc39-55c416baaeff)
+Now in the file, we will grant Loneferret same permission as root in the file. Clear the line and assign new permissions.
+![VirtualBox_LINUX SERVER_23_04_2024_23_03_54](https://github.com/Fernandez99fc/cybersec/assets/172477285/c4663c18-b372-435b-98f9-17c2ebb0e358)
+From here, I'll save using CTRL+F to save the file again and exit. 
+typing sudo su to switch user to root and we now have access to the root account.
+![VirtualBox_LINUX SERVER_23_04_2024_23_10_31](https://github.com/Fernandez99fc/cybersec/assets/172477285/d960d99c-eaa3-4118-9cb2-71306cbdfb92)
+
+
+
+
 
 
 
