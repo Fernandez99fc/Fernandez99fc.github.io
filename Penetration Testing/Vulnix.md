@@ -1,2 +1,2 @@
-# Vulnix Walkthrough
+# Vulnhub: Vulnix Walkthrough
 
