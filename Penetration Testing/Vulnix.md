@@ -134,5 +134,42 @@ After that, we should be able to login to the vulnix user account via ssh using 
 
 ![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/0f0870a5-4d58-49f2-bb3e-4277a6bc241b)
 
+Now that we are in, we need a strategy to escalate privileges to the root account. What can we do? We can use “sudo -l” command to list the commands this user can run as root.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/bfa5af92-f225-4e8d-9c65-8c892e637aba)
+
+We noticed that the vulnix user can edit the /etc/exports with sudoedit as root. Let’s run the command and we should have access to the /etc/exports file.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/8e6b8b81-7036-4440-a2e9-5e47634693ae)
+
+Since we need to gain access to the root account, we can add the root user’s home directory as an entry in the file with no_root_squash permission set. no_root_squash enables us to mount the share on our local root user account. Unlike root_squash which doesn’t allow our local root user to mount shares because it’s the superuser account.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/c7419ff3-1736-48d2-9ca2-141ee00977aa)
+
+Save the file and close. we need to restart the target machine for the change to take place. using “sudo reboot now” wont work because we dont have such permission. Manually turn it off and start the machine again.
+
+Running the showmount command again shows the root share is present.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/9a460092-fb66-477a-8af2-ef1c03cc1d28)
+
+switch to your root user account and mount the /root shares to another mount point. I created another directory in /mnt named nfs where I mounted the root share.
+
+Change to the mount point and you should have access to share and now we can cat out the trophy.txt file.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/f2e11fb2-c06d-4606-b35c-2aaff762e58b)
+
+* Remember, the goal is to gain full access to the root account, we would use the same way we gained access to the vulnix user account, Remember? by generating an rsa key and copying the public key to the share.
+
+I’ll create a .ssh directory in the share and switch back to my root’s home directory to copy(cp) my ssh public key. If you don’t have one, generate using the ssh-keygen command.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/9c888a06-51d5-4ad0-9a0f-80ea3a722ef7)
+
+I copied the key from my root account to the .ssh directory of the root share and names it authorized_keys.
+
+Now let’s login via ssh and we should have access to the root account.
+
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/ec219585-5d0b-4a7c-a676-56db65982f4e)
+
+Finally! we got access to the root user account.
+
+Hope it was helpful! Give a clap if you like the article. And don’t forget to follow for more security-related articles.
+
+Happy hacking!
+
+
 
 
