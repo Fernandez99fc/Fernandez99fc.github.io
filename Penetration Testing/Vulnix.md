@@ -109,6 +109,19 @@ We then need to edit the /etc/passwd file to change the uid for the vulnix user.
 On our system, we will edit the /etc/passwd file and change the uid of the vulnix user to 2008, I would also change it’s gid to 2008.
 ![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/edbc935f-2695-4b35-a214-bc3f75b2ad15)
 
+Save the file and close. Switch to the vulnix user we created then change directory to the mount point /mnt/nfsshare, we should have access to it already.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/b4764ee3-a122-437a-8f3e-e2fe7a0e3a59)
+vulnix home directory
+
+We are now in the vulnix home directory but we are limited to the home directory, we can’t do anything much such as escalating privileges to the root user or editing the /etc/exports file. Executing a payload in that share will still limit you to the share, so there’s no point. What we want to do it to find a way to gain full access to the account.
+
+# SSH RSA KEY AUTHENTICATION
+
+One flexible feature ssh has is the use of publickey authentication, with this a client(attacker machine in this case) can copy it’s public key to the server(target) and the server stores it as an authorized key, so the client can log into the server without the use of a password.
+
+To do this, we create an ssh public and private key with key-gen command and copy the public key to the share in the mount point.
+
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/b9ed6da6-2466-49db-9e0b-20bf6a54be4b)
 
 
 
