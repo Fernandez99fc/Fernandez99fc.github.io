@@ -54,15 +54,15 @@ I created a file and named it “unixnames” then added those 2 user accounts w
 
 hydra -t 3 -L unixnames -P passwords -u -f 172.20.10.5
 
-t: Number of threads to run
+* t: Number of threads to run
 
--L: Specifies a file containing usernames
+* -L: Specifies a file containing usernames
 
--P: Specifies file containing passwords.
+* -P: Specifies file containing passwords.
 
--u: Try every user
+* -u: Try every user
 
--f: Stop on first success
+* -f: Stop on first success
 
 Using a rockyou password list can take forever to bruteforce with although it has the “letmein” password we found present in the list. In this case, I used a wordlist with fewer words to make things faster.
 ACCOUNT LOGIN
@@ -83,9 +83,9 @@ Use “showmount -e target.ip” to view nfs shares on the target.
 
 MOUNTING NFS SHARE
 
-mount -t nfs target ip:SHARE mount point.
+* mount -t nfs target ip:SHARE mount point.
 
-mount -t nfs 172.20.10.5:/home/vulnix /mnt/nfsshare
+* mount -t nfs 172.20.10.5:/home/vulnix /mnt/nfsshare
 ![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/e4c3c23a-55d0-49eb-a02c-5bd8da80b429)
 
 Visit the mount point where I mounted the share in /mnt/nfsshares.
@@ -122,6 +122,17 @@ One flexible feature ssh has is the use of publickey authentication, with this a
 To do this, we create an ssh public and private key with key-gen command and copy the public key to the share in the mount point.
 
 ![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/b9ed6da6-2466-49db-9e0b-20bf6a54be4b)
+
+* t: specifies key type
+cd to the mounted shares and make a directory and name it .ssh, then copy the ssh public key from your vulnix/.ssh home directory to .ssh that we created.
+
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/7a576cdc-931d-4dd4-a7dd-950024bf548a)
+Rename the id_rsa.pub file in the mounted shares to authorized_keys. Use the “mv” command to rename the file in the .ssh directory.
+
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/e149ab58-e8c9-46aa-8ccc-f6744e967e24)
+After that, we should be able to login to the vulnix user account via ssh using the command “ssh -o ‘PubKeyAcceptedKeyTypes +ssh-rsa’ vulnix@172.20.10.5”
+
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/0f0870a5-4d58-49f2-bb3e-4277a6bc241b)
 
 
 
