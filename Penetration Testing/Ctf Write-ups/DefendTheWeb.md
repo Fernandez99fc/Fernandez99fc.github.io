@@ -3,8 +3,8 @@
 * Type: WEB APPLICATION EXPLOITATION
 
   ![Screenshot (9)](https://github.com/Fernandez99fc/cybersec/assets/172477285/14bcf64b-ac92-47c2-835f-1e4a91ed0102)
-te
-Found nothing after inspecting the page source code. The next thing is to capture how the request flows to the server using burpsuite.
+
+We Found nothing after inspecting the page source code. The next thing is to capture how the request flows to the server using burpsuite.
 I will open burpsuite and turn on interception. Reload the page and we should be able to capture the traffic.
 ![VirtualBox_LINUX SERVER_24_04_2024_08_20_26](https://github.com/Fernandez99fc/cybersec/assets/172477285/5568d2cd-2793-499d-832d-e095fa7a3f94)
 
