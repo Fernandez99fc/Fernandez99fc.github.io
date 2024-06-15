@@ -70,3 +70,45 @@ ACCOUNT LOGIN
 We could only get the password for user account as we were unable to find for the root account. Let’s login with the password we found “letmein”.
 
 After gaining access to the user account, there was pretty much nothing to do in there and we cant escalate privileges in it. The next step is to target another vulnerable service, I’ll take on nfs.
+
+# NFS ENUMERATION
+
+A system running nfs(network file system) service mostly likely has a share being hosted. Nfs is used for sharing resources like files, directories, printers and drivers to other nodes on the network and it runs on port 2049.
+
+Use “showmount -e target.ip” to view nfs shares on the target.
+
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/ba736c15-981e-4812-b862-31275c7f0732)
+
+/home/vulnix is a share hosted which is a home directory for a vulnix user .To acces the share, I will be use the mount command. I’ll create a directory on our local machine were we will mount the nfs share, in this case, I created a directory named nfsshare in our /mnt directory.
+
+MOUNTING NFS SHARE
+
+mount -t nfs target ip:SHARE mount point.
+
+mount -t nfs 172.20.10.5:/home/vulnix /mnt/nfsshare
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/e4c3c23a-55d0-49eb-a02c-5bd8da80b429)
+
+Visit the mount point where I mounted the share in /mnt/nfsshares.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/97afb823-7ae5-43cb-b9ef-e3d5c6b9556f)
+
+We realized we don’t have permissions to access the share and only the vulnix user has access to it’s share. So what do we do? Well, we can think of creating a lookalike user on our local machine as the vulnix user hosting the share on our the target machine with the same user id(uid).
+
+# GOAL:
+
+Create a vulnix user account on our local machine having the same user id as the vulnix user account on the target machine, so that we will have access to the share just as the owner.
+
+CREATING A USER ACCOUNT
+
+use the command “useradd — create-home vulnix”. It creates the user “vulnix” and it’s home directory.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/db629bb6-485c-49c0-8475-9884c061d67f)
+I created a user already.
+
+We then need to edit the /etc/passwd file to change the uid for the vulnix user. We firstly need to know what the uid of the vulnix user is on the target system. Since we can login via ssh as “user” and we have it’s password “letmein”, we can check the vulnix user’s id with the command “id vulnix”.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/38551005-b94b-41f2-b9f0-e6a0f346c6a1)
+
+On our system, we will edit the /etc/passwd file and change the uid of the vulnix user to 2008, I would also change it’s gid to 2008.
+![image](https://github.com/Fernandez99fc/cybersec/assets/172477285/edbc935f-2695-4b35-a214-bc3f75b2ad15)
+
+
+
+
