@@ -1,5 +1,5 @@
 # Introduction
-Welcome to my portfolio! Here, I will be posting ethical hacking and cybersecurity resources
+Welcome to my portfolio! Here, I write about cybersecurity, ethical hacking and any other topics that interests me
 
 Socials:
 
