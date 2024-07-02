@@ -33,13 +33,13 @@ A dynamic shell injection PE(portable executable) which injects a payload into a
 We need to select a windows application to use with the shell injection.
 
 /usr/share/windows-binaries  contains windows executables
-![[Uploading_VirtualBox_LINUX 2023_01_07_2024_16_16_33.png..]()
-![Uploading VirtualBox_LINUX 2023_01_07_2024_16_16_33.png…]()
+![VirtualBox_LINUX 2023_01_07_2024_16_16_33](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/a57195d4-6e24-4421-88b0-c18c8a1c6da2)
+
 
 I will be using vncviewer.exe  I will copy vncviewer.exe to root's home directory, this is to have a copy and keep the original file in it's state. We will be using the copy for the experiment.
 
 After, navigate to **/usr/share/windows-resources/shellter** - This is where shellter is stored.
-![[VirtualBox_LINUX 2023_01_07_2024_17_26_34.png]]
+![[VirtualBox_LINUX 2023_01_07_2024_17_26_34.png]]5
 
 Run "sudo wine shellter.exe"
 ![[VirtualBox_LINUX 2023_01_07_2024_17_29_00.png]]
