@@ -35,19 +35,20 @@ We need to select a windows application to use with the shell injection.
 /usr/share/windows-binaries  contains windows executables
 ![VirtualBox_LINUX 2023_01_07_2024_16_16_33](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/a57195d4-6e24-4421-88b0-c18c8a1c6da2)
 
-
 I will be using vncviewer.exe  I will copy vncviewer.exe to root's home directory, this is to have a copy and keep the original file in it's state. We will be using the copy for the experiment.
 
 After, navigate to **/usr/share/windows-resources/shellter** - This is where shellter is stored.
-![[VirtualBox_LINUX 2023_01_07_2024_17_26_34.png]]5
+![VirtualBox_LINUX 2023_01_07_2024_17_26_34](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/b8a31a85-0227-48fd-8078-0e8f229bad33)
 
 Run "sudo wine shellter.exe"
-![[VirtualBox_LINUX 2023_01_07_2024_17_29_00.png]]
+![VirtualBox_LINUX 2023_01_07_2024_17_29_00](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/05ee16c3-02c5-4a74-84ea-e59b1ec3fef5)
 
 Select "A" for automatic
 Then it would ask to select our target PE(Portable executable) we want to inject the shellcode with, we can then specify the path to **vncviewer.exe** stored in root's home directory **/root/vncviewer.exe
-![[VirtualBox_LINUX 2023_01_07_2024_20_46_10.png]]
+![VirtualBox_LINUX 2023_01_07_2024_20_46_10](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/6a211200-8f7d-42ba-bad9-2d91994a4e11)
+
 Automatically, shellter makes a backup for the executable in **/usr/share/windows-resources/shellter/shellter_backups**, because the operation we are doing isn't reversible. 
+
 
 ![[VirtualBox_LINUX 2023_01_07_2024_17_53_35.png]]We can see information about the minimum operating system it supports for the target in other for it to work, and other info such as the PE which states that the portable executable has not been packed and it has been obfuscated.
 
