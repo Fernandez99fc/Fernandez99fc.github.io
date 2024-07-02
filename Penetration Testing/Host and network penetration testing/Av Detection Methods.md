@@ -33,7 +33,8 @@ A dynamic shell injection PE(portable executable) which injects a payload into a
 We need to select a windows application to use with the shell injection.
 
 /usr/share/windows-binaries  contains windows executables
-![[VirtualBox_LINUX 2023_01_07_2024_16_16_33.png]]
+![[Uploading_VirtualBox_LINUX 2023_01_07_2024_16_16_33.png..]()
+
 
 I will be using vncviewer.exe  I will copy vncviewer.exe to root's home directory, this is to have a copy and keep the original file in it's state. We will be using the copy for the experiment.
 
