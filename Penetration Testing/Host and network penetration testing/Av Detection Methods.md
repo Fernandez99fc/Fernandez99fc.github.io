@@ -46,27 +46,37 @@ Run "sudo wine shellter.exe"
 Select "A" for automatic
 Then it would ask to select our target PE(Portable executable) we want to inject the shellcode with, we can then specify the path to **vncviewer.exe** stored in root's home directory **/root/vncviewer.exe
 ![VirtualBox_LINUX 2023_01_07_2024_20_46_10](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/6a211200-8f7d-42ba-bad9-2d91994a4e11)
-
 Automatically, shellter makes a backup for the executable in **/usr/share/windows-resources/shellter/shellter_backups**, because the operation we are doing isn't reversible. 
 
+![VirtualBox_LINUX 2023_01_07_2024_17_53_35](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/d16f6833-28f3-4c70-b670-ec9db4d54616)
+We can see information about the minimum operating system it supports for the target in other for it to work, and other info such as the PE which states that the portable executable has not been packed and it has been obfuscated.
 
-![[VirtualBox_LINUX 2023_01_07_2024_17_53_35.png]]We can see information about the minimum operating system it supports for the target in other for it to work, and other info such as the PE which states that the portable executable has not been packed and it has been obfuscated.
+![VirtualBox_LINUX 2023_01_07_2024_17_53_54](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/97dad8ce-4e7c-4b2e-9a23-90608faa073a)
 
-![[VirtualBox_LINUX 2023_01_07_2024_17_53_54 1.png]]
 
-![[VirtualBox_LINUX 2023_01_07_2024_19_54_54.png]]**"Y**" to enable to stealth mode which is basically the aim of the task. This will allow  to run vnc as it should and also run the payload secretly in the background after being executed.
-![[VirtualBox_LINUX 2023_01_07_2024_20_03_59.png]]You can decide to use a custom payload if you have, type **"L"** to use a listed payload and set lhost and lport to your system ip address and a port.
-![[VirtualBox_LINUX 2023_01_07_2024_20_08_46.png]]
+![VirtualBox_LINUX 2023_01_07_2024_19_54_54](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/3f911953-0f53-4d8b-a021-da0af72f4a67)
+**"Y**" to enable to stealth mode which is basically the aim of the task. This will allow  to run vnc as it should and also run the payload secretly in the background after being executed.
 
-![[VirtualBox_LINUX 2023_01_07_2024_20_49_29.png]]Shell Code Injection complete.
+![VirtualBox_LINUX 2023_01_07_2024_20_03_59](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/8fd9fa03-fe2f-4c89-8b9b-bbd4258cf998)
+You can decide to use a custom payload if you have, type **"L"** to use a listed payload and set lhost and lport to your system ip address and a port.
+![VirtualBox_LINUX 2023_01_07_2024_20_08_46](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/e69609af-e2a8-4ad4-9273-7152fc8ce0ff)
 
-![[end.png]]
+
+![VirtualBox_LINUX 2023_01_07_2024_20_49_29](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/0f5e0c60-3600-4db1-85d8-4cc081de33aa)
+Shell Code Injection complete.
+
+![end](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/592b6922-9c41-4120-8bdb-2d493299f775)
 Send the file to your target's system(This could be via a usb stick or any means). I will be hosting a python server to download the file on the target machine.
-![[VirtualBox_LINUX 2023_02_07_2024_08_39_41.png]]
+
+![VirtualBox_LINUX 2023_02_07_2024_08_39_41](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/44bc7e78-79c0-40af-9702-d78e25906acd)
+
 The server runs on **port 8000**. Then we enter the url on our target browser.
-![[VirtualBox_windows 7 64x_01_07_2024_20_54_44.png]]Download Vncviewer.exe
+![VirtualBox_windows 7 64x_01_07_2024_20_54_44](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/d4d2fa3f-79fd-4d59-90e0-f4ebdcfe5b35)
+Download Vncviewer.exe
 
 Then we need to setup a listener on our system for the target to connect back to since it's a reverse shell.
 Open **metasploit** and setup a listener with **use exploit/multi/handler**
-![[VirtualBox_LINUX 2023_01_07_2024_20_59_44.png]]
+
+![VirtualBox_LINUX 2023_01_07_2024_20_59_44](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/b3b93d5d-417f-4e27-8f4e-2efd89e461e0)
+
 Set lhost, lport and payload. Type run to start listening. Run the application on the target machine and we should have a reverse shell.
