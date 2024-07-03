@@ -1,6 +1,6 @@
 # Bind Shell vs Reverse Shell
 
-A shell is simply a program which is used to execute commands on an operating system.  Examples of shells in linux include /bin/bash(default), /bin/zsh, /bin/sh e.t.c and cmd/powershell in windows.
+A shell is simply a program which is used to execute commands on an operating system.  Examples of shells in linux include **/bin/bash(default), /bin/zsh, /bin/sh e.t.c and cmd/powershell** in windows.
 
 A Bind shell allows an attacker to connect to a netcat listener running on the target machine. Hence, providing it with a remote shell. In other words, a netcat listener has to be running on the target system configured with a shell.
 
@@ -32,6 +32,7 @@ We now have a bind shell. Type "dir" to list directories.
 
 We create a listener on our own system and the target connects it to, same process with bind shell, just that we are hosting a listener on our system and not the target.
 Step 1: Create a listener first 
+
 Step 2: Connect from target system
 
 **Note**:  A listener has to be setup first else you see a connection refused or no port available error, this is because what we are connecting to has to be active first before relaying a request.
