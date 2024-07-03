@@ -15,15 +15,17 @@ Target Ip is **192.168.0.156** running windows
 
 To create a bind shell to the target system, the target has to have a netcat listener listening for connection on a port with a shell to execute, then the attacker connects to it. 
 But we have to setup a listener first on the target:
-![[VirtualBox_windows 7 64x_29_06_2024_17_41_40.png]]
+![VirtualBox_windows 7 64x_29_06_2024_17_41_40](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/6ac5e3b4-e97b-430f-9bae-74bbbe27d9a1)
                                     Target Machine
+                                    
 -  - l - To listen
 - - v - For verbose
 - - p - Specify port to use
 - - e- Program to execute(e.g cmd.exe/powershell)
 
 Attacker's Machine:
-![[VirtualBox_LINUX 2023_29_06_2024_17_51_26.png]]
+![VirtualBox_LINUX 2023_29_06_2024_17_51_26](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/3eecbb5c-541b-4f6f-92c2-8b114e17548c)
+
 We now have a bind shell. Type "dir" to list directories.
 
 # Reverse Shell
@@ -34,7 +36,8 @@ Step 2: Connect from target system
 
 **Note**:  A listener has to be setup first else you see a connection refused or no port available error, this is because what we are connecting to has to be active first before relaying a request.
 
-![[VirtualBox_LINUX 2023_29_06_2024_17_58_29.png]]
+![VirtualBox_LINUX 2023_29_06_2024_17_58_29](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/e5e2415b-4139-440d-ab75-72c9eabb419d)
+
 - - l - To listen for connection
 -  - v - Verbose
 - - p- Port
@@ -42,7 +45,8 @@ Step 2: Connect from target system
 
 "- e " flag is used in windows to specify shell, while "- c " is used in linux.
 
-![[VirtualBox_windows 7 64x_29_06_2024_18_00_01 1.png]]We now have a bind shell to the attacker's machine.
+![VirtualBox_windows 7 64x_29_06_2024_18_00_01](https://github.com/Fernandez99fc/Fernandez99fc.github.io/assets/172477285/d4552fef-015b-40b9-8715-63211036be3c)
+We now have a bind shell to the attacker's machine.
 
 Most of the time, a reverse shell is preferred to a bind because you don't have access to the target's system to enable netcat or you dont know if there's netcat installed or running, and a firewall might be blocking incoming traffic.
 
