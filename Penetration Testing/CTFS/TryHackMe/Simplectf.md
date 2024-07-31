@@ -39,3 +39,9 @@ Error:
 
 I got the error because I use python3 and changes few things in the sqli python program
 
+Change the interpreter to python3;
+![Screenshot (87)](https://github.com/user-attachments/assets/83df1da9-f0d8-4590-b55a-8b2c0795ec7c)
+
+Add a parenthesis;
+
+
