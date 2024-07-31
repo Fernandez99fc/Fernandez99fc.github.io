@@ -36,6 +36,37 @@ But I noticed that the server does not accept .php file extension, uploading .ht
 Using msfvenom to generate a php payload;
 ![Screenshot (66)](https://github.com/user-attachments/assets/1f23cb77-331d-46a1-b91c-36473abcbeda)
 
+![Screenshot (68)](https://github.com/user-attachments/assets/e9d2caf3-b07f-4f07-85ec-f82cc533c6aa)
+
+![Screenshot (53)](https://github.com/user-attachments/assets/706f9a79-c35e-496b-a08a-16531697aff8)
+
+Upload the payload, after uploading, start a netcat listener;
+![Screenshot (65)](https://github.com/user-attachments/assets/0327f6d1-c802-4d10-8d58-df01da0abe43)
+
+Navigate to /uploads and execute the payload;
+![Screenshot (70)](https://github.com/user-attachments/assets/0de5865e-6a5f-422f-8bed-b5342cc4bccc)
+
+We have a shell;
+![Screenshot (69)](https://github.com/user-attachments/assets/0d70fdf0-bbcb-4aef-8be1-e2f298f54f48)
+
+We can see the user.txt file and read the text.
+
+Next, we need to escalate privilege to the root user. We need to find setuid binaries which are executable we can run with the right of the root user. we can do "find / -perm /4000 2> /dev/null"
+![Screenshot (62)](https://github.com/user-attachments/assets/2e2879bd-ece4-4ef0-ac92-974d7a83903a)
+
+We can't make use of sudo and the only useful binary to use to escalate privilege is the /usr/bin/python program.
+
+we can use this command to escalate privileges: python -c 'import os; os.execl("/bin/sh", "sh", "-p")' 
+
+gotten from https://gtfobins.github.io/
+
+![Screenshot (63)](https://github.com/user-attachments/assets/b6484adb-263b-4864-8a66-e6ba9449d757)
+
+using pwd shows we are in the root directory and we read the root.txt file
+
+Happy hacking folks!
+
+
 
 
 
