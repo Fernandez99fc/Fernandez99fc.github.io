@@ -17,6 +17,15 @@ What is running on the higher port?
 
 Ans: ssh
 
+What is the cve you're using against this application?
+![Screenshot (77)](https://github.com/user-attachments/assets/8b0295fc-81b5-4fc1-ad47-528aad478c82)
+![Screenshot (74)](https://github.com/user-attachments/assets/d6936948-4804-457f-b746-010579a3f849)
+
+
+
+
+
+
 
 
 
