@@ -42,7 +42,7 @@ I got the error because I use python3 and changed few things in the sqli python 
 Change the interpreter to python3;
 ![Screenshot (87)](https://github.com/user-attachments/assets/83df1da9-f0d8-4590-b55a-8b2c0795ec7c)
 
-Add a parenthesis(compare and add paranthesis to yours)
+Add a parenthesisat the beginning and end(compare and add paranthesis to yours)
 ![Screenshot (88)](https://github.com/user-attachments/assets/58f73040-0a5d-49e6-9def-5829285abbc1)
 
 
