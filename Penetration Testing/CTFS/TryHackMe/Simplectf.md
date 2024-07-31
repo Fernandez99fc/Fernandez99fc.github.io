@@ -1,4 +1,4 @@
-![Screenshot (74)](https://github.com/user-attachments/assets/fe7ad05c-90ae-486d-8525-8b97d165c0c2)# SimpleCtf
+# SimpleCtf
 
 ![Screenshot (71)](https://github.com/user-attachments/assets/0389b598-3974-41b7-8d00-1c92738e32c9)
 
