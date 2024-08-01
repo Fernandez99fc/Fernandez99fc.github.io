@@ -1,4 +1,4 @@
-# SimpleCtf
+![Screenshot (89)](https://github.com/user-attachments/assets/fd65f679-4c8e-492c-9ae4-677a0b73b1ce)# SimpleCtf
 
 ![Screenshot (71)](https://github.com/user-attachments/assets/0389b598-3974-41b7-8d00-1c92738e32c9)
 
@@ -44,6 +44,9 @@ Change the interpreter to python3;
 
 Add a parenthesis at the beginning and end(compare and add paranthesis to yours)
 ![Screenshot (88)](https://github.com/user-attachments/assets/58f73040-0a5d-49e6-9def-5829285abbc1)
+![Screenshot (89)](https://github.com/user-attachments/assets/310c5a1b-25e3-4f2e-86b8-d704d90eaa7a)
+![Screenshot (90)](https://github.com/user-attachments/assets/a0f8993f-32e7-479d-9b2b-fae1262d064e)
 
+After running it againn, I still got an error but it returned a username "mitch" the previous time I ran it. I can use the ssh login checker module in metasploit to bruteforce since hydra cant handle the delay with the server and the python script also terminates connection due to delay.
 
-
+After running the bruteforce, I was able to find a password for it called "secret"
