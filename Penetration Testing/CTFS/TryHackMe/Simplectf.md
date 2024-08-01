@@ -49,4 +49,10 @@ Add a parenthesis at the beginning and end(compare and add paranthesis to yours)
 
 After running it againn, I still got an error but it returned a username "mitch" the previous time I ran it. I can use the ssh login checker module in metasploit to bruteforce since hydra cant handle the delay with the server and the python script also terminates connection due to delay.
 
+![Screenshot (92)](https://github.com/user-attachments/assets/d11ab388-1441-498f-b7c5-b7aa04b14ec3)
+
 After running the bruteforce, I was able to find a password for it called "secret"
+
+![Screenshot (91)](https://github.com/user-attachments/assets/8917281a-4005-48ce-a5b2-778b068a09b3)
+
+
