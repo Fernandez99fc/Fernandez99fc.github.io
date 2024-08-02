@@ -66,7 +66,35 @@ What can we leverage to spawn a shell?
 
 ![Screenshot (94)](https://github.com/user-attachments/assets/408f9fb1-95fc-49e4-b9bb-eb43378c4db2)
 
-Typing "sudo -l", we can see list of commands the user is allowed to run as root. The user is allowd to use a text editor called vim to edit and configure files as root.
+Typing "sudo -l", we can see list of commands the user is allowed to run as root. The user is allowed to use a text editor called vim to edit and configure files as root.
+
+We can simply use vim to  edit the /etc/passwd file to escalate privilege to the root account by adding a new user with the user id(uid) of 0 , same as the root uid.
+
+firstly, we need to generate password hash using openssl.
+![Screenshot (96)](https://github.com/user-attachments/assets/28a9a39f-6cd0-4a41-98c7-5f08ccea011a)
+
+"password" being the password and we can see the generate hash.
+
+Next we use sudo vim /etc/passwd to edit the file and add a new user called "user1".
+
+![Screenshot (97)](https://github.com/user-attachments/assets/fcf670a0-6d36-4138-b0d0-94ef431a205e)
+
+I created a new user, added the password hash, user id  of 0 and group id of 0 seperated by a colon and specified the home directory we want to spawn into which is /root.
+
+Now switch uer(su) to user1 and type the password which is "password" and we should be in the root user directory or account
+
+![Screenshot (98)](https://github.com/user-attachments/assets/e2951d00-4ac0-48c7-97db-9086efeed8a6)
+
+
+Read the root.txt file
+
+
+
+
+
+
+
+
 
 
 
