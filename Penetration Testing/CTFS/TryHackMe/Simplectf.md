@@ -64,3 +64,10 @@ ls /home to see other users on the system. The user is sunbath
 
 What can we leverage to spawn a shell?
 
+![Screenshot (94)](https://github.com/user-attachments/assets/408f9fb1-95fc-49e4-b9bb-eb43378c4db2)
+
+Typing "sudo -l", we can see list of commands the user is allowed to run as root. The user is allowd to use a text editor called vim to edit and configure files as root.
+
+
+
+
