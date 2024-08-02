@@ -55,4 +55,12 @@ After running the bruteforce, I was able to find a password for it called "secre
 
 ![Screenshot (91)](https://github.com/user-attachments/assets/8917281a-4005-48ce-a5b2-778b068a09b3)
 
+After logging in via ssh, I was able to get a shell
+![Screenshot (93)](https://github.com/user-attachments/assets/935c80b7-a53f-4bf0-855d-c93ab3cb7888)
+
+cat user.txt = g00d j0b, keep up!
+
+ls /home to see other users on the system. The user is sunbath
+
+What can we leverage to spawn a shell?
 
